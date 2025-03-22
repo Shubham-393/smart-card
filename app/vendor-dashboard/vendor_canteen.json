@@ -1,0 +1,803 @@
+
+[
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-09",
+        "Item": "Sandwich",
+        "Quantity_Sold": 8,
+        "Revenue": 240,
+        "Profit": 80.98
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-06",
+        "Item": "Samosa",
+        "Quantity_Sold": 9,
+        "Revenue": 108,
+        "Profit": 42.98
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-13",
+        "Item": "Burger",
+        "Quantity_Sold": 1,
+        "Revenue": 50,
+        "Profit": 14.19
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-01",
+        "Item": "Vada Pav",
+        "Quantity_Sold": 7,
+        "Revenue": 105,
+        "Profit": 32.15
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-20",
+        "Item": "Coffee",
+        "Quantity_Sold": 4,
+        "Revenue": 80,
+        "Profit": 17.97
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-23",
+        "Item": "Vada Pav",
+        "Quantity_Sold": 4,
+        "Revenue": 60,
+        "Profit": 21.35
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-30",
+        "Item": "Burger",
+        "Quantity_Sold": 4,
+        "Revenue": 200,
+        "Profit": 74.27
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-19",
+        "Item": "Sandwich",
+        "Quantity_Sold": 1,
+        "Revenue": 30,
+        "Profit": 10.34
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-24",
+        "Item": "Cold Drink",
+        "Quantity_Sold": 6,
+        "Revenue": 240,
+        "Profit": 56.96
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-16",
+        "Item": "Chips",
+        "Quantity_Sold": 5,
+        "Revenue": 100,
+        "Profit": 30.27
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-10",
+        "Item": "Samosa",
+        "Quantity_Sold": 9,
+        "Revenue": 108,
+        "Profit": 28.19
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-19",
+        "Item": "Samosa",
+        "Quantity_Sold": 2,
+        "Revenue": 24,
+        "Profit": 7.52
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-28",
+        "Item": "Maggie",
+        "Quantity_Sold": 5,
+        "Revenue": 175,
+        "Profit": 52.79
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-01",
+        "Item": "Cold Drink",
+        "Quantity_Sold": 9,
+        "Revenue": 360,
+        "Profit": 114.35
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-16",
+        "Item": "Sandwich",
+        "Quantity_Sold": 9,
+        "Revenue": 270,
+        "Profit": 87.88
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-18",
+        "Item": "Puff",
+        "Quantity_Sold": 1,
+        "Revenue": 25,
+        "Profit": 6.03
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-04",
+        "Item": "Vada Pav",
+        "Quantity_Sold": 1,
+        "Revenue": 15,
+        "Profit": 4.86
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-22",
+        "Item": "Cold Drink",
+        "Quantity_Sold": 10,
+        "Revenue": 400,
+        "Profit": 118.88
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-13",
+        "Item": "Chips",
+        "Quantity_Sold": 4,
+        "Revenue": 80,
+        "Profit": 21.11
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-21",
+        "Item": "Tea",
+        "Quantity_Sold": 4,
+        "Revenue": 40,
+        "Profit": 9.88
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-12",
+        "Item": "Maggie",
+        "Quantity_Sold": 10,
+        "Revenue": 350,
+        "Profit": 107.12
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-08",
+        "Item": "Coffee",
+        "Quantity_Sold": 1,
+        "Revenue": 20,
+        "Profit": 6.71
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-13",
+        "Item": "Coffee",
+        "Quantity_Sold": 4,
+        "Revenue": 80,
+        "Profit": 24.75
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-01",
+        "Item": "Puff",
+        "Quantity_Sold": 2,
+        "Revenue": 50,
+        "Profit": 15.28
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-02",
+        "Item": "Vada Pav",
+        "Quantity_Sold": 7,
+        "Revenue": 105,
+        "Profit": 39.61
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-12",
+        "Item": "Coffee",
+        "Quantity_Sold": 3,
+        "Revenue": 60,
+        "Profit": 13.0
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-14",
+        "Item": "Vada Pav",
+        "Quantity_Sold": 3,
+        "Revenue": 45,
+        "Profit": 15.51
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-16",
+        "Item": "Puff",
+        "Quantity_Sold": 9,
+        "Revenue": 225,
+        "Profit": 55.65
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-04",
+        "Item": "Vada Pav",
+        "Quantity_Sold": 10,
+        "Revenue": 150,
+        "Profit": 34.34
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-28",
+        "Item": "Tea",
+        "Quantity_Sold": 10,
+        "Revenue": 100,
+        "Profit": 31.57
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-06",
+        "Item": "Samosa",
+        "Quantity_Sold": 10,
+        "Revenue": 120,
+        "Profit": 44.69
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-28",
+        "Item": "Cold Drink",
+        "Quantity_Sold": 6,
+        "Revenue": 240,
+        "Profit": 55.53
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-29",
+        "Item": "Burger",
+        "Quantity_Sold": 2,
+        "Revenue": 100,
+        "Profit": 34.74
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-27",
+        "Item": "Puff",
+        "Quantity_Sold": 6,
+        "Revenue": 150,
+        "Profit": 30.62
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-25",
+        "Item": "Coffee",
+        "Quantity_Sold": 10,
+        "Revenue": 200,
+        "Profit": 75.4
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-22",
+        "Item": "Samosa",
+        "Quantity_Sold": 4,
+        "Revenue": 48,
+        "Profit": 19.07
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-26",
+        "Item": "Puff",
+        "Quantity_Sold": 3,
+        "Revenue": 75,
+        "Profit": 23.31
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-07",
+        "Item": "Chips",
+        "Quantity_Sold": 9,
+        "Revenue": 180,
+        "Profit": 38.5
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-24",
+        "Item": "Sandwich",
+        "Quantity_Sold": 10,
+        "Revenue": 300,
+        "Profit": 79.41
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-31",
+        "Item": "Puff",
+        "Quantity_Sold": 3,
+        "Revenue": 75,
+        "Profit": 18.93
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-16",
+        "Item": "Vada Pav",
+        "Quantity_Sold": 5,
+        "Revenue": 75,
+        "Profit": 17.46
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-28",
+        "Item": "Chips",
+        "Quantity_Sold": 5,
+        "Revenue": 100,
+        "Profit": 34.75
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-20",
+        "Item": "Tea",
+        "Quantity_Sold": 1,
+        "Revenue": 10,
+        "Profit": 3.16
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-26",
+        "Item": "Coffee",
+        "Quantity_Sold": 4,
+        "Revenue": 80,
+        "Profit": 19.47
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-18",
+        "Item": "Maggie",
+        "Quantity_Sold": 3,
+        "Revenue": 105,
+        "Profit": 30.5
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-05",
+        "Item": "Cold Drink",
+        "Quantity_Sold": 6,
+        "Revenue": 240,
+        "Profit": 66.14
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-07",
+        "Item": "Vada Pav",
+        "Quantity_Sold": 1,
+        "Revenue": 15,
+        "Profit": 4.28
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-28",
+        "Item": "Maggie",
+        "Quantity_Sold": 8,
+        "Revenue": 280,
+        "Profit": 56.45
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-23",
+        "Item": "Samosa",
+        "Quantity_Sold": 1,
+        "Revenue": 12,
+        "Profit": 3.96
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-17",
+        "Item": "Chips",
+        "Quantity_Sold": 2,
+        "Revenue": 40,
+        "Profit": 11.36
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-21",
+        "Item": "Puff",
+        "Quantity_Sold": 6,
+        "Revenue": 150,
+        "Profit": 38.48
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-09",
+        "Item": "Burger",
+        "Quantity_Sold": 2,
+        "Revenue": 100,
+        "Profit": 36.17
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-29",
+        "Item": "Tea",
+        "Quantity_Sold": 3,
+        "Revenue": 30,
+        "Profit": 7.61
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-13",
+        "Item": "Tea",
+        "Quantity_Sold": 6,
+        "Revenue": 60,
+        "Profit": 19.98
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-27",
+        "Item": "Coffee",
+        "Quantity_Sold": 9,
+        "Revenue": 180,
+        "Profit": 56.35
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-21",
+        "Item": "Vada Pav",
+        "Quantity_Sold": 6,
+        "Revenue": 90,
+        "Profit": 19.8
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-24",
+        "Item": "Maggie",
+        "Quantity_Sold": 3,
+        "Revenue": 105,
+        "Profit": 26.1
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-19",
+        "Item": "Puff",
+        "Quantity_Sold": 2,
+        "Revenue": 50,
+        "Profit": 10.0
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-03",
+        "Item": "Cold Drink",
+        "Quantity_Sold": 1,
+        "Revenue": 40,
+        "Profit": 14.9
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-10",
+        "Item": "Samosa",
+        "Quantity_Sold": 4,
+        "Revenue": 48,
+        "Profit": 10.78
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-20",
+        "Item": "Coffee",
+        "Quantity_Sold": 6,
+        "Revenue": 120,
+        "Profit": 28.92
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-08",
+        "Item": "Puff",
+        "Quantity_Sold": 5,
+        "Revenue": 125,
+        "Profit": 44.15
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-10",
+        "Item": "Puff",
+        "Quantity_Sold": 6,
+        "Revenue": 150,
+        "Profit": 55.19
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-04",
+        "Item": "Maggie",
+        "Quantity_Sold": 1,
+        "Revenue": 35,
+        "Profit": 8.85
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-08",
+        "Item": "Burger",
+        "Quantity_Sold": 10,
+        "Revenue": 500,
+        "Profit": 185.01
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-19",
+        "Item": "Vada Pav",
+        "Quantity_Sold": 8,
+        "Revenue": 120,
+        "Profit": 25.84
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-11",
+        "Item": "Tea",
+        "Quantity_Sold": 4,
+        "Revenue": 40,
+        "Profit": 9.6
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-22",
+        "Item": "Burger",
+        "Quantity_Sold": 8,
+        "Revenue": 400,
+        "Profit": 94.97
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-08",
+        "Item": "Samosa",
+        "Quantity_Sold": 5,
+        "Revenue": 60,
+        "Profit": 15.87
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-01",
+        "Item": "Coffee",
+        "Quantity_Sold": 6,
+        "Revenue": 120,
+        "Profit": 30.77
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-04",
+        "Item": "Coffee",
+        "Quantity_Sold": 5,
+        "Revenue": 100,
+        "Profit": 20.17
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-17",
+        "Item": "Cold Drink",
+        "Quantity_Sold": 2,
+        "Revenue": 80,
+        "Profit": 20.32
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-29",
+        "Item": "Chips",
+        "Quantity_Sold": 10,
+        "Revenue": 200,
+        "Profit": 68.99
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-25",
+        "Item": "Maggie",
+        "Quantity_Sold": 10,
+        "Revenue": 350,
+        "Profit": 128.38
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-31",
+        "Item": "Tea",
+        "Quantity_Sold": 7,
+        "Revenue": 70,
+        "Profit": 21.86
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-06",
+        "Item": "Maggie",
+        "Quantity_Sold": 7,
+        "Revenue": 245,
+        "Profit": 58.06
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-13",
+        "Item": "Sandwich",
+        "Quantity_Sold": 9,
+        "Revenue": 270,
+        "Profit": 68.85
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-29",
+        "Item": "Sandwich",
+        "Quantity_Sold": 5,
+        "Revenue": 150,
+        "Profit": 54.63
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-02",
+        "Item": "Vada Pav",
+        "Quantity_Sold": 1,
+        "Revenue": 15,
+        "Profit": 4.24
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-28",
+        "Item": "Tea",
+        "Quantity_Sold": 4,
+        "Revenue": 40,
+        "Profit": 12.51
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-28",
+        "Item": "Vada Pav",
+        "Quantity_Sold": 9,
+        "Revenue": 135,
+        "Profit": 41.24
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-28",
+        "Item": "Chips",
+        "Quantity_Sold": 6,
+        "Revenue": 120,
+        "Profit": 28.0
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-12",
+        "Item": "Cold Drink",
+        "Quantity_Sold": 8,
+        "Revenue": 320,
+        "Profit": 98.01
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-01",
+        "Item": "Samosa",
+        "Quantity_Sold": 6,
+        "Revenue": 72,
+        "Profit": 20.34
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-13",
+        "Item": "Tea",
+        "Quantity_Sold": 3,
+        "Revenue": 30,
+        "Profit": 7.38
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-04",
+        "Item": "Cold Drink",
+        "Quantity_Sold": 7,
+        "Revenue": 280,
+        "Profit": 99.66
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-06",
+        "Item": "Chips",
+        "Quantity_Sold": 5,
+        "Revenue": 100,
+        "Profit": 22.74
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-11",
+        "Item": "Tea",
+        "Quantity_Sold": 7,
+        "Revenue": 70,
+        "Profit": 23.99
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-31",
+        "Item": "Vada Pav",
+        "Quantity_Sold": 8,
+        "Revenue": 120,
+        "Profit": 35.03
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-06",
+        "Item": "Coffee",
+        "Quantity_Sold": 5,
+        "Revenue": 100,
+        "Profit": 32.63
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-27",
+        "Item": "Puff",
+        "Quantity_Sold": 7,
+        "Revenue": 175,
+        "Profit": 46.22
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-10",
+        "Item": "Vada Pav",
+        "Quantity_Sold": 10,
+        "Revenue": 150,
+        "Profit": 37.05
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-23",
+        "Item": "Cold Drink",
+        "Quantity_Sold": 1,
+        "Revenue": 40,
+        "Profit": 11.07
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-02",
+        "Item": "Sandwich",
+        "Quantity_Sold": 1,
+        "Revenue": 30,
+        "Profit": 11.27
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-25",
+        "Item": "Maggie",
+        "Quantity_Sold": 2,
+        "Revenue": 70,
+        "Profit": 20.82
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-01",
+        "Item": "Puff",
+        "Quantity_Sold": 7,
+        "Revenue": 175,
+        "Profit": 61.26
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-19",
+        "Item": "Chips",
+        "Quantity_Sold": 8,
+        "Revenue": 160,
+        "Profit": 60.7
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-20",
+        "Item": "Vada Pav",
+        "Quantity_Sold": 1,
+        "Revenue": 15,
+        "Profit": 4.49
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-26",
+        "Item": "Tea",
+        "Quantity_Sold": 8,
+        "Revenue": 80,
+        "Profit": 19.5
+    },
+    {
+        "Vendor_Email": "22113025@pvgcoet.ac.in",
+        "Date": "2024-01-27",
+        "Item": "Puff",
+        "Quantity_Sold": 10,
+        "Revenue": 250,
+        "Profit": 98.66
+    }
+]

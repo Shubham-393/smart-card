@@ -13,7 +13,7 @@ import { db } from "../firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
 export default function LoginPage() {
-  const [userType, setUserType] = useState<"parent" | "vendor">("vendor");
+  const [userType, setUserType] = useState<"parent" | "vendor" | "admin">("vendor");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -25,7 +25,7 @@ export default function LoginPage() {
 
     try {
       // Query Firestore for user with matching email and password
-      const userCollection = userType === "vendor" ? "vendors" : "parents";
+      const userCollection = userType === "vendor" ? "vendors" : userType === "parent" ? "parents" : "admin";
       const usersRef = collection(db, userCollection);
       const q = query(
         usersRef,
@@ -48,7 +48,13 @@ export default function LoginPage() {
       }));
 
       // Redirect based on user type
-      router.push(userType === "vendor" ? "/vendor-dashboard" : "/parent-dashboard");
+      if (userType === "vendor") {
+        router.push("/vendor-dashboard");
+      } else if (userType === "parent") {
+        router.push("/parent-dashboard");
+      } else {
+        router.push("/admin-dashboard");
+      }
     } catch (error: any) {
       console.error("Error logging in:", error);
       setError("An error occurred. Please try again.");
@@ -71,7 +77,7 @@ export default function LoginPage() {
             <Label htmlFor="userType">I am a</Label>
             <Select
               value={userType}
-              onValueChange={(value: "parent" | "vendor") => setUserType(value)}
+              onValueChange={(value: "parent" | "vendor" | "admin") => setUserType(value)}
               required
             >
               <SelectTrigger>
@@ -80,6 +86,7 @@ export default function LoginPage() {
               <SelectContent>
                 <SelectItem value="parent">Parent</SelectItem>
                 <SelectItem value="vendor">Vendor</SelectItem>
+                <SelectItem value="admin">Admin</SelectItem>
               </SelectContent>
             </Select>
           </div>

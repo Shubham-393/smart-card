@@ -1,0 +1,605 @@
+[
+    {
+        "StudentID": "STU1000",
+        "Category": "Xerox",
+        "Item": "Black & White Copy",
+        "Quantity": 10,
+        "PricePerUnit": 1,
+        "TotalAmount": 10,
+        "TransactionDate": "2024-03-06 13:23:00"
+    },
+    {
+        "StudentID": "STU1001",
+        "Category": "Stationery",
+        "Item": "Sticky Notes",
+        "Quantity": 7,
+        "PricePerUnit": 40,
+        "TotalAmount": 280,
+        "TransactionDate": "2024-01-18 13:02:00"
+    },
+    {
+        "StudentID": "STU1002",
+        "Category": "Xerox",
+        "Item": "Binding",
+        "Quantity": 8,
+        "PricePerUnit": 50,
+        "TotalAmount": 400,
+        "TransactionDate": "2024-03-17 13:12:00"
+    },
+    {
+        "StudentID": "STU1003",
+        "Category": "Bookstore",
+        "Item": "Textbook",
+        "Quantity": 5,
+        "PricePerUnit": 200,
+        "TotalAmount": 500,
+        "TransactionDate": "2024-02-21 16:47:00"
+    },
+    {
+        "StudentID": "STU1000",
+        "Category": "Xerox",
+        "Item": "Binding",
+        "Quantity": 1,
+        "PricePerUnit": 50,
+        "TotalAmount": 50,
+        "TransactionDate": "2024-03-28 15:56:00"
+    },
+    {
+        "StudentID": "STU1001",
+        "Category": "Xerox",
+        "Item": "Binding",
+        "Quantity": 3,
+        "PricePerUnit": 50,
+        "TotalAmount": 150,
+        "TransactionDate": "2024-01-19 17:19:00"
+    },
+    {
+        "StudentID": "STU1002",
+        "Category": "Bookstore",
+        "Item": "Notebook",
+        "Quantity": 4,
+        "PricePerUnit": 50,
+        "TotalAmount": 200,
+        "TransactionDate": "2024-02-04 17:24:00"
+    },
+    {
+        "StudentID": "STU1003",
+        "Category": "Xerox",
+        "Item": "Black & White Copy",
+        "Quantity": 2,
+        "PricePerUnit": 1,
+        "TotalAmount": 2,
+        "TransactionDate": "2024-01-15 13:51:00"
+    },
+    {
+        "StudentID": "STU1000",
+        "Category": "Stationery",
+        "Item": "Marker",
+        "Quantity": 1,
+        "PricePerUnit": 25,
+        "TotalAmount": 25,
+        "TransactionDate": "2024-02-24 10:39:00"
+    },
+    {
+        "StudentID": "STU1001",
+        "Category": "Xerox",
+        "Item": "Binding",
+        "Quantity": 4,
+        "PricePerUnit": 50,
+        "TotalAmount": 200,
+        "TransactionDate": "2024-03-30 16:42:00"
+    },
+    {
+        "StudentID": "STU1002",
+        "Category": "Xerox",
+        "Item": "Black & White Copy",
+        "Quantity": 1,
+        "PricePerUnit": 1,
+        "TotalAmount": 1,
+        "TransactionDate": "2024-01-27 11:29:00"
+    },
+    {
+        "StudentID": "STU1003",
+        "Category": "Bookstore",
+        "Item": "Textbook",
+        "Quantity": 7,
+        "PricePerUnit": 200,
+        "TotalAmount": 500,
+        "TransactionDate": "2024-03-19 14:01:00"
+    },
+    {
+        "StudentID": "STU1000",
+        "Category": "Stationery",
+        "Item": "Scale",
+        "Quantity": 1,
+        "PricePerUnit": 15,
+        "TotalAmount": 15,
+        "TransactionDate": "2024-01-31 17:51:00"
+    },
+    {
+        "StudentID": "STU1001",
+        "Category": "Xerox",
+        "Item": "Binding",
+        "Quantity": 2,
+        "PricePerUnit": 50,
+        "TotalAmount": 100,
+        "TransactionDate": "2024-02-20 16:56:00"
+    },
+    {
+        "StudentID": "STU1002",
+        "Category": "Xerox",
+        "Item": "Color Copy",
+        "Quantity": 4,
+        "PricePerUnit": 5,
+        "TotalAmount": 20,
+        "TransactionDate": "2024-03-06 10:42:00"
+    },
+    {
+        "StudentID": "STU1003",
+        "Category": "Bookstore",
+        "Item": "Notebook",
+        "Quantity": 9,
+        "PricePerUnit": 50,
+        "TotalAmount": 450,
+        "TransactionDate": "2024-03-11 08:10:00"
+    },
+    {
+        "StudentID": "STU1000",
+        "Category": "Canteen",
+        "Item": "Samosa",
+        "Quantity": 7,
+        "PricePerUnit": 12,
+        "TotalAmount": 84,
+        "TransactionDate": "2024-01-01 08:42:00"
+    },
+    {
+        "StudentID": "STU1001",
+        "Category": "Xerox",
+        "Item": "Black & White Copy",
+        "Quantity": 9,
+        "PricePerUnit": 1,
+        "TotalAmount": 9,
+        "TransactionDate": "2024-03-03 12:46:00"
+    },
+    {
+        "StudentID": "STU1002",
+        "Category": "Xerox",
+        "Item": "Black & White Copy",
+        "Quantity": 5,
+        "PricePerUnit": 1,
+        "TotalAmount": 5,
+        "TransactionDate": "2024-02-25 09:47:00"
+    },
+    {
+        "StudentID": "STU1003",
+        "Category": "Stationery",
+        "Item": "A4 Sheets",
+        "Quantity": 6,
+        "PricePerUnit": 2,
+        "TotalAmount": 12,
+        "TransactionDate": "2024-01-16 09:08:00"
+    },
+    {
+        "StudentID": "STU1000",
+        "Category": "Canteen",
+        "Item": "Sandwich",
+        "Quantity": 7,
+        "PricePerUnit": 25,
+        "TotalAmount": 175,
+        "TransactionDate": "2024-01-05 13:51:00"
+    },
+    {
+        "StudentID": "STU1001",
+        "Category": "Bookstore",
+        "Item": "Pencil",
+        "Quantity": 3,
+        "PricePerUnit": 5,
+        "TotalAmount": 15,
+        "TransactionDate": "2024-01-30 09:46:00"
+    },
+    {
+        "StudentID": "STU1002",
+        "Category": "Canteen",
+        "Item": "Tea",
+        "Quantity": 4,
+        "PricePerUnit": 10,
+        "TotalAmount": 40,
+        "TransactionDate": "2024-03-22 15:32:00"
+    },
+    {
+        "StudentID": "STU1003",
+        "Category": "Canteen",
+        "Item": "Samosa",
+        "Quantity": 9,
+        "PricePerUnit": 12,
+        "TotalAmount": 108,
+        "TransactionDate": "2024-02-10 17:10:00"
+    },
+    {
+        "StudentID": "STU1000",
+        "Category": "Canteen",
+        "Item": "Samosa",
+        "Quantity": 7,
+        "PricePerUnit": 12,
+        "TotalAmount": 84,
+        "TransactionDate": "2024-02-01 16:01:00"
+    },
+    {
+        "StudentID": "STU1001",
+        "Category": "Xerox",
+        "Item": "Color Copy",
+        "Quantity": 6,
+        "PricePerUnit": 5,
+        "TotalAmount": 30,
+        "TransactionDate": "2024-02-05 17:47:00"
+    },
+    {
+        "StudentID": "STU1002",
+        "Category": "Bookstore",
+        "Item": "Pencil",
+        "Quantity": 8,
+        "PricePerUnit": 5,
+        "TotalAmount": 40,
+        "TransactionDate": "2024-02-17 11:55:00"
+    },
+    {
+        "StudentID": "STU1003",
+        "Category": "Canteen",
+        "Item": "Tea",
+        "Quantity": 1,
+        "PricePerUnit": 10,
+        "TotalAmount": 10,
+        "TransactionDate": "2024-02-13 12:03:00"
+    },
+    {
+        "StudentID": "STU1000",
+        "Category": "Stationery",
+        "Item": "A4 Sheets",
+        "Quantity": 5,
+        "PricePerUnit": 2,
+        "TotalAmount": 10,
+        "TransactionDate": "2024-02-24 14:04:00"
+    },
+    {
+        "StudentID": "STU1001",
+        "Category": "Bookstore",
+        "Item": "Pen",
+        "Quantity": 10,
+        "PricePerUnit": 10,
+        "TotalAmount": 100,
+        "TransactionDate": "2024-01-17 12:34:00"
+    },
+    {
+        "StudentID": "STU1002",
+        "Category": "Canteen",
+        "Item": "Vadapav",
+        "Quantity": 6,
+        "PricePerUnit": 15,
+        "TotalAmount": 90,
+        "TransactionDate": "2024-02-28 09:31:00"
+    },
+    {
+        "StudentID": "STU001",
+        "Category": "Bookstore",
+        "Item": "Textbook - Mathematics",
+        "Quantity": 1,
+        "PricePerUnit": 450,
+        "TotalAmount": 450,
+        "TransactionDate": "2024-03-20 10:30:00"
+    },
+    {
+        "StudentID": "STU001",
+        "Category": "Stationery",
+        "Item": "Notebook - 200 pages",
+        "Quantity": 2,
+        "PricePerUnit": 80,
+        "TotalAmount": 160,
+        "TransactionDate": "2024-03-20 11:15:00"
+    },
+    {
+        "StudentID": "STU001",
+        "Category": "Canteen",
+        "Item": "Lunch Combo",
+        "Quantity": 1,
+        "PricePerUnit": 120,
+        "TotalAmount": 120,
+        "TransactionDate": "2024-03-20 13:00:00"
+    },
+    {
+        "StudentID": "STU001",
+        "Category": "Xerox",
+        "Item": "Study Notes",
+        "Quantity": 20,
+        "PricePerUnit": 2,
+        "TotalAmount": 40,
+        "TransactionDate": "2024-03-20 15:45:00"
+    },
+    {
+        "StudentID": "STU001",
+        "Category": "Bookstore",
+        "Item": "Scientific Calculator",
+        "Quantity": 1,
+        "PricePerUnit": 1200,
+        "TotalAmount": 1200,
+        "TransactionDate": "2024-03-19 09:20:00"
+    },
+    {
+        "StudentID": "STU001",
+        "Category": "Stationery",
+        "Item": "Pens - Pack of 5",
+        "Quantity": 1,
+        "PricePerUnit": 50,
+        "TotalAmount": 50,
+        "TransactionDate": "2024-03-19 10:30:00"
+    },
+    {
+        "StudentID": "STU001",
+        "Category": "Canteen",
+        "Item": "Breakfast Combo",
+        "Quantity": 1,
+        "PricePerUnit": 80,
+        "TotalAmount": 80,
+        "TransactionDate": "2024-03-19 08:15:00"
+    },
+    {
+        "StudentID": "STU001",
+        "Category": "Xerox",
+        "Item": "Assignment Sheets",
+        "Quantity": 15,
+        "PricePerUnit": 2,
+        "TotalAmount": 30,
+        "TransactionDate": "2024-03-19 14:20:00"
+    },
+    {
+        "StudentID": "STU001",
+        "Category": "Bookstore",
+        "Item": "Textbook - Physics",
+        "Quantity": 1,
+        "PricePerUnit": 550,
+        "TotalAmount": 550,
+        "TransactionDate": "2024-03-18 11:30:00"
+    },
+    {
+        "StudentID": "STU001",
+        "Category": "Stationery",
+        "Item": "Pencils - Pack of 10",
+        "Quantity": 1,
+        "PricePerUnit": 40,
+        "TotalAmount": 40,
+        "TransactionDate": "2024-03-18 12:45:00"
+    },
+    {
+        "StudentID": "STU001",
+        "Category": "Canteen",
+        "Item": "Snacks Combo",
+        "Quantity": 1,
+        "PricePerUnit": 60,
+        "TotalAmount": 60,
+        "TransactionDate": "2024-03-18 16:00:00"
+    },
+    {
+        "StudentID": "STU001",
+        "Category": "Xerox",
+        "Item": "Previous Year Papers",
+        "Quantity": 25,
+        "PricePerUnit": 2,
+        "TotalAmount": 50,
+        "TransactionDate": "2024-03-18 15:30:00"
+    },
+    {
+        "StudentID": "STU002",
+        "Category": "Bookstore",
+        "Item": "Textbook - Chemistry",
+        "Quantity": 1,
+        "PricePerUnit": 480,
+        "TotalAmount": 480,
+        "TransactionDate": "2024-03-20 09:15:00"
+    },
+    {
+        "StudentID": "STU002",
+        "Category": "Stationery",
+        "Item": "Drawing Sheets",
+        "Quantity": 5,
+        "PricePerUnit": 15,
+        "TotalAmount": 75,
+        "TransactionDate": "2024-03-20 10:45:00"
+    },
+    {
+        "StudentID": "STU002",
+        "Category": "Canteen",
+        "Item": "Lunch Special",
+        "Quantity": 1,
+        "PricePerUnit": 150,
+        "TotalAmount": 150,
+        "TransactionDate": "2024-03-20 13:30:00"
+    },
+    {
+        "StudentID": "STU002",
+        "Category": "Xerox",
+        "Item": "Lab Manual",
+        "Quantity": 30,
+        "PricePerUnit": 2,
+        "TotalAmount": 60,
+        "TransactionDate": "2024-03-20 16:00:00"
+    },
+    {
+        "StudentID": "STU002",
+        "Category": "Bookstore",
+        "Item": "Graph Paper",
+        "Quantity": 2,
+        "PricePerUnit": 25,
+        "TotalAmount": 50,
+        "TransactionDate": "2024-03-19 08:30:00"
+    },
+    {
+        "StudentID": "STU002",
+        "Category": "Stationery",
+        "Item": "Eraser - Pack of 3",
+        "Quantity": 1,
+        "PricePerUnit": 30,
+        "TotalAmount": 30,
+        "TransactionDate": "2024-03-19 09:45:00"
+    },
+    {
+        "StudentID": "STU002",
+        "Category": "Canteen",
+        "Item": "Breakfast Special",
+        "Quantity": 1,
+        "PricePerUnit": 100,
+        "TotalAmount": 100,
+        "TransactionDate": "2024-03-19 07:30:00"
+    },
+    {
+        "StudentID": "STU002",
+        "Category": "Xerox",
+        "Item": "Study Material",
+        "Quantity": 20,
+        "PricePerUnit": 2,
+        "TotalAmount": 40,
+        "TransactionDate": "2024-03-19 14:45:00"
+    },
+    {
+        "StudentID": "STU002",
+        "Category": "Bookstore",
+        "Item": "Textbook - Biology",
+        "Quantity": 1,
+        "PricePerUnit": 520,
+        "TotalAmount": 520,
+        "TransactionDate": "2024-03-18 10:15:00"
+    },
+    {
+        "StudentID": "STU002",
+        "Category": "Stationery",
+        "Item": "Color Pencils",
+        "Quantity": 1,
+        "PricePerUnit": 120,
+        "TotalAmount": 120,
+        "TransactionDate": "2024-03-18 11:30:00"
+    },
+    {
+        "StudentID": "STU002",
+        "Category": "Canteen",
+        "Item": "Evening Snacks",
+        "Quantity": 1,
+        "PricePerUnit": 70,
+        "TotalAmount": 70,
+        "TransactionDate": "2024-03-18 16:30:00"
+    },
+    {
+        "StudentID": "STU002",
+        "Category": "Xerox",
+        "Item": "Practice Papers",
+        "Quantity": 35,
+        "PricePerUnit": 2,
+        "TotalAmount": 70,
+        "TransactionDate": "2024-03-18 15:15:00"
+    },
+    {
+        "StudentID": "STU003",
+        "Category": "Bookstore",
+        "Item": "Textbook - Computer Science",
+        "Quantity": 1,
+        "PricePerUnit": 600,
+        "TotalAmount": 600,
+        "TransactionDate": "2024-03-20 08:45:00"
+    },
+    {
+        "StudentID": "STU003",
+        "Category": "Stationery",
+        "Item": "USB Drive 32GB",
+        "Quantity": 1,
+        "PricePerUnit": 400,
+        "TotalAmount": 400,
+        "TransactionDate": "2024-03-20 09:30:00"
+    },
+    {
+        "StudentID": "STU003",
+        "Category": "Canteen",
+        "Item": "Lunch Premium",
+        "Quantity": 1,
+        "PricePerUnit": 180,
+        "TotalAmount": 180,
+        "TransactionDate": "2024-03-20 13:45:00"
+    },
+    {
+        "StudentID": "STU003",
+        "Category": "Xerox",
+        "Item": "Programming Notes",
+        "Quantity": 40,
+        "PricePerUnit": 2,
+        "TotalAmount": 80,
+        "TransactionDate": "2024-03-20 16:30:00"
+    },
+    {
+        "StudentID": "STU003",
+        "Category": "Bookstore",
+        "Item": "Textbook - English",
+        "Quantity": 1,
+        "PricePerUnit": 350,
+        "TotalAmount": 350,
+        "TransactionDate": "2024-03-19 10:15:00"
+    },
+    {
+        "StudentID": "STU003",
+        "Category": "Stationery",
+        "Item": "Sticky Notes",
+        "Quantity": 2,
+        "PricePerUnit": 45,
+        "TotalAmount": 90,
+        "TransactionDate": "2024-03-19 11:00:00"
+    },
+    {
+        "StudentID": "STU003",
+        "Category": "Canteen",
+        "Item": "Breakfast Premium",
+        "Quantity": 1,
+        "PricePerUnit": 120,
+        "TotalAmount": 120,
+        "TransactionDate": "2024-03-19 08:00:00"
+    },
+    {
+        "StudentID": "STU003",
+        "Category": "Xerox",
+        "Item": "Project Guidelines",
+        "Quantity": 25,
+        "PricePerUnit": 2,
+        "TotalAmount": 50,
+        "TransactionDate": "2024-03-19 15:15:00"
+    },
+    {
+        "StudentID": "STU003",
+        "Category": "Bookstore",
+        "Item": "Textbook - History",
+        "Quantity": 1,
+        "PricePerUnit": 420,
+        "TotalAmount": 420,
+        "TransactionDate": "2024-03-18 09:45:00"
+    },
+    {
+        "StudentID": "STU003",
+        "Category": "Stationery",
+        "Item": "Highlighters - Pack of 4",
+        "Quantity": 1,
+        "PricePerUnit": 60,
+        "TotalAmount": 60,
+        "TransactionDate": "2024-03-18 10:30:00"
+    },
+    {
+        "StudentID": "STU003",
+        "Category": "Canteen",
+        "Item": "Evening Special",
+        "Quantity": 1,
+        "PricePerUnit": 90,
+        "TotalAmount": 90,
+        "TransactionDate": "2024-03-18 17:00:00"
+    },
+    {
+        "StudentID": "STU003",
+        "Category": "Xerox",
+        "Item": "Research Papers",
+        "Quantity": 30,
+        "PricePerUnit": 2,
+        "TotalAmount": 60,
+        "TransactionDate": "2024-03-18 16:15:00"
+    }
+]

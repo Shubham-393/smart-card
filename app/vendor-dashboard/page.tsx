@@ -7,6 +7,32 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+  ArcElement,
+  PointElement,
+  LineElement,
+} from 'chart.js';
+import { Bar, Doughnut, Line, Scatter } from 'react-chartjs-2';
+import vendorCanteenData from './vendor_canteen.json';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+  ArcElement,
+  PointElement,
+  LineElement
+);
 
 interface VendorData {
   vendorName: string;
@@ -23,12 +49,22 @@ interface BillItem {
   price: number;
 }
 
+interface VendorTransaction {
+  Vendor_Email: string;
+  Date: string;
+  Item: string;
+  Quantity_Sold: number;
+  Revenue: number;
+  Profit: number;
+}
+
 export default function VendorDashboard() {
   const [activeTab, setActiveTab] = useState("dashboard");
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [loading, setLoading] = useState(true);
   const [vendorData, setVendorData] = useState<VendorData | null>(null);
   const [items, setItems] = useState<BillItem[]>([]);
+  const [selectedPlot, setSelectedPlot] = useState("revenue-profit");
   const [newItem, setNewItem] = useState<BillItem>({
     id: Date.now(),
     name: "",
