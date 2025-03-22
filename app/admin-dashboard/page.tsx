@@ -19,6 +19,14 @@ import {
 } from 'chart.js';
 import { Bar, Doughnut, Line } from 'react-chartjs-2';
 import studentTransactions from '../parent-dashboard/student_transaction.json';
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
 
 ChartJS.register(
   CategoryScale,
@@ -45,6 +53,7 @@ interface Transaction {
 interface Vendor {
   id: string;
   businessName: string;
+  vendorBusiness: string;
   businessId: string;
   govId: string;
   email: string;
@@ -270,6 +279,19 @@ export default function AdminDashboard() {
             <li>
               <button
                 className={`w-full flex items-center p-2 rounded-lg ${
+                  activeTab === "vendor-auth"
+                    ? "bg-blue-500 text-white"
+                    : "text-gray-700 hover:bg-gray-200"
+                }`}
+                onClick={() => setActiveTab("vendor-auth")}
+              >
+                <Store className="w-5 h-5 mr-2" />
+                Vendor Authentication
+              </button>
+            </li>
+            <li>
+              <button
+                className={`w-full flex items-center p-2 rounded-lg ${
                   activeTab === "transactions"
                     ? "bg-blue-500 text-white"
                     : "text-gray-700 hover:bg-gray-200"
@@ -283,19 +305,6 @@ export default function AdminDashboard() {
             <li>
               <button
                 className={`w-full flex items-center p-2 rounded-lg ${
-                  activeTab === "students"
-                    ? "bg-blue-500 text-white"
-                    : "text-gray-700 hover:bg-gray-200"
-                }`}
-                onClick={() => setActiveTab("students")}
-              >
-                <Users className="w-5 h-5 mr-2" />
-                Students
-              </button>
-            </li>
-            <li>
-              <button
-                className={`w-full flex items-center p-2 rounded-lg ${
                   activeTab === "analytics"
                     ? "bg-blue-500 text-white"
                     : "text-gray-700 hover:bg-gray-200"
@@ -304,19 +313,6 @@ export default function AdminDashboard() {
               >
                 <PieChart className="w-5 h-5 mr-2" />
                 Analytics
-              </button>
-            </li>
-            <li>
-              <button
-                className={`w-full flex items-center p-2 rounded-lg ${
-                  activeTab === "vendor-auth"
-                    ? "bg-blue-500 text-white"
-                    : "text-gray-700 hover:bg-gray-200"
-                }`}
-                onClick={() => setActiveTab("vendor-auth")}
-              >
-                <Store className="w-5 h-5 mr-2" />
-                Vendor Authentication
               </button>
             </li>
           </ul>
@@ -729,144 +725,102 @@ export default function AdminDashboard() {
           )}
 
           {activeTab === "vendor-auth" && (
-            <div>
-              <div className="flex justify-between items-center mb-6">
-                <h3 className="text-lg font-medium text-gray-900">Vendor Authentication</h3>
-                <button
-                  className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors flex items-center"
-                  onClick={() => setShowAddVendorModal(true)}
-                >
-                  <Plus className="w-4 h-4 mr-2" />
-                  Add New Vendor
-                </button>
-              </div>
-
-              {error && (
-                <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4">
-                  {error}
-                </div>
-              )}
-
-              {/* Filters */}
-              <div className="bg-white rounded-xl p-6 shadow-sm mb-6">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="space-y-6">
+              {/* Search and Filter Section */}
+              <div className="flex flex-col md:flex-row gap-4 items-center justify-between bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl shadow-sm">
+                <div className="flex-1 w-full md:w-auto">
                   <div className="relative">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-500" />
                     <input
-                      type="text"
                       placeholder="Search vendors..."
                       value={vendorSearchTerm}
                       onChange={(e) => setVendorSearchTerm(e.target.value)}
-                      className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="pl-10 w-full bg-white/80 backdrop-blur-sm border-2 border-blue-100 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     />
                   </div>
-                  <div>
-                    <label htmlFor="status-select" className="block text-sm font-medium text-gray-700 mb-2">
-                      Filter by Status
-                    </label>
-                    <select
-                      id="status-select"
-                      value={vendorStatusFilter}
-                      onChange={(e) => setVendorStatusFilter(e.target.value as Vendor['status'] | 'all')}
-                      className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                      aria-label="Select vendor status"
-                    >
-                      <option value="all">All Status</option>
-                      <option value="pending">Pending</option>
-                      <option value="approved">Approved</option>
-                      <option value="rejected">Rejected</option>
-                    </select>
-                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <Select value={vendorStatusFilter} onValueChange={(value: "all" | "pending" | "approved" | "rejected") => setVendorStatusFilter(value)}>
+                    <SelectTrigger className="w-[180px] bg-white/80 backdrop-blur-sm border-2 border-blue-100">
+                      <SelectValue placeholder="Filter by status" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">All Status</SelectItem>
+                      <SelectItem value="pending">Pending</SelectItem>
+                      <SelectItem value="approved">Approved</SelectItem>
+                      <SelectItem value="rejected">Rejected</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <Button onClick={() => setShowAddVendorModal(true)} className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white shadow-md">
+                    <Plus className="w-4 h-4 mr-2" />
+                    Add Vendor
+                  </Button>
                 </div>
               </div>
 
-              {/* Vendors List */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {vendors
-                  .filter(vendor => {
-                    const matchesSearch = 
-                      (vendor.businessName?.toLowerCase() || '').includes(vendorSearchTerm.toLowerCase()) ||
-                      (vendor.businessId?.toLowerCase() || '').includes(vendorSearchTerm.toLowerCase()) ||
-                      (vendor.email?.toLowerCase() || '').includes(vendorSearchTerm.toLowerCase());
-                    const matchesStatus = vendorStatusFilter === "all" || vendor.status === vendorStatusFilter;
-                    return matchesSearch && matchesStatus;
-                  })
-                  .map(vendor => (
-                    <div key={vendor.id} className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <div className="flex items-center justify-between mb-4">
-                        <div>
-                          <h4 className="text-lg font-semibold text-gray-900">{vendor.businessName}</h4>
-                          <p className="text-sm text-gray-500">Business ID: {vendor.businessId}</p>
-                        </div>
-                        <div className={`px-2 py-1 rounded-full text-xs font-medium
-                          ${(vendor.status || 'pending') === 'approved' ? 'bg-green-100 text-green-800' :
-                            (vendor.status || 'pending') === 'rejected' ? 'bg-red-100 text-red-800' :
-                            'bg-yellow-100 text-yellow-800'}`}>
-                          {(vendor.status || 'pending').charAt(0).toUpperCase() + (vendor.status || 'pending').slice(1)}
-                        </div>
-                      </div>
-                      
-                      <div className="space-y-3 mb-4">
-                        <div className="flex items-center text-sm text-gray-600">
-                          <Store className="w-4 h-4 mr-2" />
-                          {vendor.address}
-                        </div>
-                        <div className="flex items-center text-sm text-gray-600">
-                          <CreditCard className="w-4 h-4 mr-2" />
-                          {vendor.email}
-                        </div>
-                        <div className="flex items-center text-sm text-gray-600">
-                          <Phone className="w-4 h-4 mr-2" />
-                          {vendor.phone}
-                        </div>
-                      </div>
-
-                      {vendor.status === 'rejected' && vendor.rejectionReason && (
-                        <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
-                          <p className="text-sm text-red-700">
-                            <span className="font-medium">Rejection Reason:</span> {vendor.rejectionReason}
-                          </p>
-                        </div>
-                      )}
-
-                      <div className="border-t border-gray-200 pt-4">
-                        <div className="flex justify-between items-center">
-                          <div className="space-x-2">
-                            {vendor.status === 'pending' && (
-                              <>
-                                <button
-                                  className="bg-green-500 text-white px-3 py-1 rounded-lg hover:bg-green-600 transition-colors flex items-center"
-                                  onClick={() => handleApproveVendor(vendor.id)}
-                                >
-                                  <CheckCircle className="w-4 h-4 mr-1" />
-                                  Approve
-                                </button>
-                                <button
-                                  className="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-600 transition-colors flex items-center"
-                                  onClick={() => {
+              {/* Vendors Table */}
+              <div className="overflow-x-auto bg-white rounded-xl shadow-md">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr className="bg-gradient-to-r from-blue-50 to-indigo-50">
+                      <th className="p-3 text-left text-sm font-medium text-blue-900">Business Type</th>
+                      <th className="p-3 text-left text-sm font-medium text-blue-900">Email</th>
+                      <th className="p-3 text-left text-sm font-medium text-blue-900">Phone</th>
+                      <th className="p-3 text-left text-sm font-medium text-blue-900">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vendors
+                      .filter(vendor => {
+                        const matchesSearch = 
+                          (vendor.vendorBusiness?.toLowerCase() || '').includes(vendorSearchTerm.toLowerCase()) ||
+                          (vendor.email?.toLowerCase() || '').includes(vendorSearchTerm.toLowerCase()) ||
+                          (vendor.phone || '').includes(vendorSearchTerm);
+                        const matchesStatus = vendorStatusFilter === "all" || vendor.status === vendorStatusFilter;
+                        return matchesSearch && matchesStatus;
+                      })
+                      .map((vendor) => (
+                        <tr key={vendor.id} className="border-t hover:bg-blue-50/50 transition-colors">
+                          <td className="p-3">
+                            <div className="flex items-center">
+                              <Store className="w-5 h-5 text-blue-500 mr-2" />
+                              <span className="font-medium text-gray-900">{vendor.vendorBusiness}</span>
+                            </div>
+                          </td>
+                          <td className="p-3 text-gray-700">{vendor.email}</td>
+                          <td className="p-3 text-gray-700">{vendor.phone}</td>
+                          <td className="p-3">
+                            <div className="flex items-center gap-2">
+                              <Select
+                                value={vendor.status}
+                                onValueChange={(value: "pending" | "approved" | "rejected") => {
+                                  if (value === "rejected") {
                                     setSelectedVendor(vendor);
                                     setShowRejectModal(true);
-                                  }}
-                                >
-                                  <XCircle className="w-4 h-4 mr-1" />
-                                  Reject
-                                </button>
-                              </>
-                            )}
-                          </div>
-                          <button
-                            className="text-blue-500 hover:text-blue-600 text-sm font-medium"
-                            onClick={() => {
-                              setSelectedVendor(vendor);
-                              setShowVendorDetailsModal(true);
-                            }}
-                          >
-                            View Details
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+                                  } else {
+                                    handleApproveVendor(vendor.id);
+                                  }
+                                }}
+                              >
+                                <SelectTrigger className={`w-[140px] ${
+                                  vendor.status === "approved" ? "bg-green-50 border-green-200 text-green-700" :
+                                  vendor.status === "rejected" ? "bg-red-50 border-red-200 text-red-700" :
+                                  "bg-yellow-50 border-yellow-200 text-yellow-700"
+                                }`}>
+                                  <SelectValue placeholder="Select status" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                  <SelectItem value="pending" className="text-yellow-700 hover:bg-yellow-50">Pending</SelectItem>
+                                  <SelectItem value="approved" className="text-green-700 hover:bg-green-50">Approved</SelectItem>
+                                  <SelectItem value="rejected" className="text-red-700 hover:bg-red-50">Rejected</SelectItem>
+                                </SelectContent>
+                              </Select>
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
               </div>
             </div>
           )}
@@ -989,171 +943,165 @@ export default function AdminDashboard() {
 
       {/* Vendor Details Modal */}
       {showVendorDetailsModal && selectedVendor && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl p-6 max-w-2xl w-full">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-medium text-gray-900">Vendor Details</h3>
-              <button
-                onClick={() => setShowVendorDetailsModal(false)}
-                className="text-gray-400 hover:text-gray-500"
-                aria-label="Close vendor details"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            <div className="space-y-4">
-              <div>
-                <h4 className="text-sm font-medium text-gray-500">Business Information</h4>
-                <div className="mt-2 grid grid-cols-2 gap-4">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex justify-between items-start mb-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900">{selectedVendor.businessName}</h3>
+                  <p className="text-gray-500">Business ID: {selectedVendor.businessId}</p>
+                </div>
+                <button
+                  onClick={() => setShowVendorDetailsModal(false)}
+                  className="text-gray-400 hover:text-gray-500"
+                  aria-label="Close modal"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-4">
                   <div>
-                    <p className="text-sm text-gray-600">Business Name</p>
-                    <p className="font-medium">{selectedVendor.businessName}</p>
+                    <h4 className="text-sm font-medium text-gray-500">Email</h4>
+                    <p className="mt-1">{selectedVendor.email}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600">Business ID</p>
-                    <p className="font-medium">{selectedVendor.businessId}</p>
+                    <h4 className="text-sm font-medium text-gray-500">Phone</h4>
+                    <p className="mt-1">{selectedVendor.phone}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600">Government ID</p>
-                    <p className="font-medium">{selectedVendor.govId}</p>
+                    <h4 className="text-sm font-medium text-gray-500">Address</h4>
+                    <p className="mt-1">{selectedVendor.address}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600">Status</p>
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium
-                      ${(selectedVendor.status || 'pending') === 'approved' ? 'bg-green-100 text-green-800' :
-                        (selectedVendor.status || 'pending') === 'rejected' ? 'bg-red-100 text-red-800' :
-                        'bg-yellow-100 text-yellow-800'}`}>
-                      {(selectedVendor.status || 'pending').charAt(0).toUpperCase() + (selectedVendor.status || 'pending').slice(1)}
+                    <h4 className="text-sm font-medium text-gray-500">Status</h4>
+                    <span className={`mt-1 inline-block px-2 py-1 rounded-full text-xs font-medium ${
+                      selectedVendor.status === "approved" ? "bg-green-100 text-green-800" :
+                      selectedVendor.status === "rejected" ? "bg-red-100 text-red-800" :
+                      "bg-yellow-100 text-yellow-800"
+                    }`}>
+                      {selectedVendor.status.charAt(0).toUpperCase() + selectedVendor.status.slice(1)}
                     </span>
                   </div>
-                </div>
-              </div>
-              <div>
-                <h4 className="text-sm font-medium text-gray-500">Contact Information</h4>
-                <div className="mt-2 grid grid-cols-2 gap-4">
                   <div>
-                    <p className="text-sm text-gray-600">Email</p>
-                    <p className="font-medium">{selectedVendor.email}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-600">Phone</p>
-                    <p className="font-medium">{selectedVendor.phone}</p>
-                  </div>
-                  <div className="col-span-2">
-                    <p className="text-sm text-gray-600">Address</p>
-                    <p className="font-medium">{selectedVendor.address}</p>
+                    <h4 className="text-sm font-medium text-gray-500">Submitted On</h4>
+                    <p className="mt-1">{new Date(selectedVendor.submittedAt).toLocaleDateString()}</p>
                   </div>
                 </div>
-              </div>
-              <div>
-                <h4 className="text-sm font-medium text-gray-500">Documents</h4>
-                <div className="mt-2 grid grid-cols-2 gap-4">
+
+                <div className="space-y-4">
                   <div>
-                    <p className="text-sm text-gray-600">Business ID Document</p>
-                    <a
-                      href={selectedVendor.documents.businessId}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-500 hover:text-blue-600 text-sm"
+                    <h4 className="text-sm font-medium text-gray-500">Documents</h4>
+                    <div className="mt-2 space-y-2">
+                      <div className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
+                        <span className="text-sm">Business ID</span>
+                        <a
+                          href={selectedVendor.documents.businessId}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-500 hover:text-blue-600 text-sm"
+                        >
+                          View
+                        </a>
+                      </div>
+                      <div className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
+                        <span className="text-sm">Government ID</span>
+                        <a
+                          href={selectedVendor.documents.govId}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-500 hover:text-blue-600 text-sm"
+                        >
+                          View
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {selectedVendor.status === "rejected" && selectedVendor.rejectionReason && (
+                    <div>
+                      <h4 className="text-sm font-medium text-gray-500">Rejection Reason</h4>
+                      <p className="mt-1 text-sm text-red-600">{selectedVendor.rejectionReason}</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <div className="mt-6 flex justify-end gap-4">
+                <Button
+                  variant="outline"
+                  onClick={() => setShowVendorDetailsModal(false)}
+                >
+                  Close
+                </Button>
+                {selectedVendor.status === "pending" && (
+                  <>
+                    <Button
+                      variant="outline"
+                      className="text-green-600 hover:text-green-700"
+                      onClick={() => handleApproveVendor(selectedVendor.id)}
                     >
-                      View Document
-                    </a>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-600">Government ID Document</p>
-                    <a
-                      href={selectedVendor.documents.govId}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-500 hover:text-blue-600 text-sm"
+                      <CheckCircle className="w-4 h-4 mr-1" />
+                      Approve
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="text-red-600 hover:text-red-700"
+                      onClick={() => {
+                        setShowVendorDetailsModal(false);
+                        setShowRejectModal(true);
+                      }}
                     >
-                      View Document
-                    </a>
-                  </div>
-                </div>
+                      <XCircle className="w-4 h-4 mr-1" />
+                      Reject
+                    </Button>
+                  </>
+                )}
               </div>
-            </div>
-            <div className="mt-6 flex justify-end space-x-3">
-              <button
-                onClick={() => setShowVendorDetailsModal(false)}
-                className="px-4 py-2 text-gray-700 hover:text-gray-900"
-              >
-                Close
-              </button>
-              {selectedVendor.status === 'pending' && (
-                <>
-                  <button
-                    onClick={() => handleApproveVendor(selectedVendor.id)}
-                    className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
-                  >
-                    Approve
-                  </button>
-                  <button
-                    onClick={() => {
-                      setSelectedVendor(vendor);
-                      setShowRejectModal(true);
-                    }}
-                    className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
-                  >
-                    Reject
-                  </button>
-                </>
-              )}
             </div>
           </div>
         </div>
       )}
 
-      {/* Reject Vendor Modal */}
+      {/* Reject Modal */}
       {showRejectModal && selectedVendor && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl p-6 max-w-md w-full">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-medium text-gray-900">Reject Vendor</h3>
-              <button
-                onClick={() => setShowRejectModal(false)}
-                className="text-gray-400 hover:text-gray-500"
-                aria-label="Close modal"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            <div className="space-y-4">
-              <div>
-                <label htmlFor="rejection-reason" className="block text-sm font-medium text-gray-700 mb-1">
-                  Rejection Reason
-                </label>
-                <textarea
-                  id="rejection-reason"
-                  value={rejectionReason}
-                  onChange={(e) => setRejectionReason(e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  rows={4}
-                  placeholder="Enter reason for rejection"
-                  required
-                />
-              </div>
-            </div>
-            <div className="mt-6 flex justify-end space-x-3">
-              <button
-                onClick={() => setShowRejectModal(false)}
-                className="px-4 py-2 text-gray-700 hover:text-gray-900"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={() => {
-                  if (rejectionReason.trim()) {
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-lg max-w-md w-full">
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Reject Vendor</h3>
+              <p className="text-gray-600 mb-4">
+                Please provide a reason for rejecting {selectedVendor.businessName}.
+              </p>
+              <textarea
+                value={rejectionReason}
+                onChange={(e) => setRejectionReason(e.target.value)}
+                placeholder="Enter rejection reason..."
+                className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                rows={4}
+              />
+              <div className="mt-6 flex justify-end gap-4">
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    setShowRejectModal(false);
+                    setRejectionReason("");
+                  }}
+                >
+                  Cancel
+                </Button>
+                <Button
+                  variant="destructive"
+                  onClick={() => {
                     handleRejectVendor(selectedVendor.id, rejectionReason);
                     setShowRejectModal(false);
-                    setRejectionReason('');
-                  }
-                }}
-                disabled={!rejectionReason.trim()}
-                className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 disabled:bg-gray-400 disabled:cursor-not-allowed"
-              >
-                Reject Vendor
-              </button>
+                    setRejectionReason("");
+                  }}
+                  disabled={!rejectionReason.trim()}
+                >
+                  Reject
+                </Button>
+              </div>
             </div>
           </div>
         </div>

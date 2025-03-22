@@ -932,9 +932,9 @@ export default function ParentDashboard() {
 
           {activeTab === "expenses" && (
             <div>
-              <h3 className="text-xl font-semibold mb-4 text-blue-500">Expenses Overview</h3>
+              <h3 className="text-xl font-semibold mb-4 text-blue-500">Student smart Card</h3>
               <p className="text-gray-600">
-                Track your spending and manage your budget.
+                Generate your student smart card to manage your child's expenses.
               </p>
               <div className="mt-6">
                 <div className="flex justify-between mb-4">
