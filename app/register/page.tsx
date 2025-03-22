@@ -369,19 +369,7 @@ export default function RegisterPage() {
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Common Fields */}
-          <div className="space-y-2">
-            <Label htmlFor="fullName">Full Name</Label>
-            <Input
-              id="fullName"
-              name="fullName"
-              type="text"
-              placeholder="John Doe"
-              value={formData.fullName}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
+         
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
             <Input
