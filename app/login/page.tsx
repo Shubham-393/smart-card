@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import { useState } from "react";
@@ -11,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { School } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation"; // For Next.js 13 and above
-import { db } from "../firebase"; // Adjust the path to your Firebase config
+import { db } from "../firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
 export default function LoginPage() {
@@ -19,18 +17,21 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const router = useRouter(); // Initialize the router
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError("");
 
     try {
-      let userData;
-      const userCollection = userType === "vendor" ? "vendors" : "parents";
-      
       // Query Firestore for user with matching email and password
+      const userCollection = userType === "vendor" ? "vendors" : "parents";
       const usersRef = collection(db, userCollection);
-      const q = query(usersRef, where("email", "==", email), where("password", "==", password));
+      const q = query(
+        usersRef,
+        where("email", "==", email),
+        where("password", "==", password)
+      );
       const querySnapshot = await getDocs(q);
 
       if (querySnapshot.empty) {
@@ -38,14 +39,17 @@ export default function LoginPage() {
         return;
       }
 
-      userData = querySnapshot.docs[0].data();
-      console.log("Login successful:", userData);
-      alert("Login successful!");
-      setError(""); // Clear any previous errors
+      // Store user data in localStorage for session management
+      const userData = querySnapshot.docs[0].data();
+      localStorage.setItem('userData', JSON.stringify({
+        ...userData,
+        userType,
+        uid: querySnapshot.docs[0].id
+      }));
 
       // Redirect based on user type
       router.push(userType === "vendor" ? "/vendor-dashboard" : "/parent-dashboard");
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error logging in:", error);
       setError("An error occurred. Please try again.");
     }
