@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { LayoutDashboard, CreditCard, Box, PieChart, User, Store, Phone, Mail } from "lucide-react";
+import { LayoutDashboard, CreditCard, Box, PieChart, User, Store, Phone, Mail, Trash2, Plus } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 interface VendorData {
   vendorName: string;
@@ -14,11 +16,25 @@ interface VendorData {
   upiId: string;
 }
 
+interface BillItem {
+  id: number;
+  name: string;
+  quantity: number;
+  price: number;
+}
+
 export default function VendorDashboard() {
   const [activeTab, setActiveTab] = useState("dashboard");
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [loading, setLoading] = useState(true);
   const [vendorData, setVendorData] = useState<VendorData | null>(null);
+  const [items, setItems] = useState<BillItem[]>([]);
+  const [newItem, setNewItem] = useState<BillItem>({
+    id: Date.now(),
+    name: "",
+    quantity: 1,
+    price: 0,
+  });
   const router = useRouter();
 
   useEffect(() => {
@@ -50,6 +66,32 @@ export default function VendorDashboard() {
 
     checkAuthorization();
   }, []);
+
+  const addItem = () => {
+    if (newItem.name && newItem.price > 0) {
+      setItems([...items, newItem]);
+      setNewItem({
+        id: Date.now(),
+        name: "",
+        quantity: 1,
+        price: 0,
+      });
+    }
+  };
+
+  const removeItem = (id: number) => {
+    setItems(items.filter(item => item.id !== id));
+  };
+
+  const updateQuantity = (id: number, quantity: number) => {
+    setItems(items.map(item => 
+      item.id === id ? { ...item, quantity: Math.max(1, quantity) } : item
+    ));
+  };
+
+  const calculateTotal = () => {
+    return items.reduce((total, item) => total + (item.price * item.quantity), 0);
+  };
 
   if (loading) {
     return (
@@ -313,32 +355,105 @@ export default function VendorDashboard() {
           {activeTab === "inventory" && (
             <div>
               <h3 className="text-xl font-semibold mb-4">Inventory Management</h3>
-              <p className="text-gray-600">
-                Manage your inventory items here.
-              </p>
-              <div className="mt-6">
-                <table className="w-full border-collapse">
-                  <thead>
-                    <tr className="bg-gray-100">
-                      <th className="p-2 border">Item</th>
-                      <th className="p-2 border">Quantity</th>
-                      <th className="p-2 border">Price</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border">
-                      <td className="p-2 border">Notebook</td>
-                      <td className="p-2 border">50</td>
-                      <td className="p-2 border">₹20</td>
-                    </tr>
-                    <tr className="border">
-                      <td className="p-2 border">Pen</td>
-                      <td className="p-2 border">100</td>
-                      <td className="p-2 border">₹10</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              
+              {/* Add New Item Form */}
+              <Card className="p-4 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                  <div className="col-span-2">
+                    <Label htmlFor="itemName">Item Name</Label>
+                    <Input
+                      id="itemName"
+                      value={newItem.name}
+                      onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
+                      placeholder="Enter item name"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="quantity">Quantity</Label>
+                    <Input
+                      id="quantity"
+                      type="number"
+                      min="1"
+                      value={newItem.quantity}
+                      onChange={(e) => setNewItem({ ...newItem, quantity: parseInt(e.target.value) || 1 })}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="price">Price (₹)</Label>
+                    <Input
+                      id="price"
+                      type="number"
+                      min="0"
+                      step="0.01"
+                      value={newItem.price}
+                      onChange={(e) => setNewItem({ ...newItem, price: parseFloat(e.target.value) || 0 })}
+                    />
+                  </div>
+                </div>
+                <Button 
+                  onClick={addItem} 
+                  className="mt-4 w-full"
+                  disabled={!newItem.name || newItem.price <= 0}
+                >
+                  <Plus className="w-4 h-4 mr-2" />
+                  Add Item
+                </Button>
+              </Card>
+
+              {/* Current Bill Items */}
+              <Card className="p-4">
+                <h2 className="text-xl font-semibold mb-4">Current Bill</h2>
+                
+                {items.length === 0 ? (
+                  <p className="text-muted-foreground text-center py-4">No items added to the bill yet</p>
+                ) : (
+                  <>
+                    <div className="space-y-4">
+                      {items.map((item) => (
+                        <div key={item.id} className="flex items-center gap-4 p-2 border rounded-lg">
+                          <div className="flex-1">
+                            <p className="font-medium">{item.name}</p>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Input
+                              type="number"
+                              min="1"
+                              value={item.quantity}
+                              onChange={(e) => updateQuantity(item.id, parseInt(e.target.value) || 1)}
+                              className="w-20"
+                            />
+                            <p className="w-24 text-right">₹{(item.price * item.quantity).toFixed(2)}</p>
+                            <Button
+                              variant="destructive"
+                              size="icon"
+                              onClick={() => removeItem(item.id)}
+                            >
+                              <Trash2 className="w-4 h-4" />
+                            </Button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-6 flex justify-between items-center border-t pt-4">
+                      <p className="text-lg font-semibold">Total Amount:</p>
+                      <p className="text-2xl font-bold">₹{calculateTotal().toFixed(2)}</p>
+                    </div>
+
+                    <div className="mt-6 flex justify-end gap-4">
+                      <Button
+                        variant="outline"
+                        onClick={() => setItems([])}
+                      >
+                        Clear Bill
+                      </Button>
+                      <Button>
+                        Generate Bill
+                      </Button>
+                    </div>
+                  </>
+                )}
+              </Card>
             </div>
           )}
 
